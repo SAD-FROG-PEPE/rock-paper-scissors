@@ -31,8 +31,21 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        console.log("ROUND " + (i + 1));
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+    if (humanScore === computerScore)
+        console.log(`YOU ARE EQUAL: ${humanScore} AGAINST ${computerScore}`);
+    else if (humanScore > computerScore)
+        console.log(`HUMAN WIN THE GAME WITH SCORE ${humanScore} AGAINST ${computerScore}`);
+    else
+        console.log(`COMPUTER WIN THE GAME WITH SCORE ${computerScore} AGAINST ${humanScore}`);
+}
+
 let humanScore = 0;
 let computerScore = 0;
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
+playGame();
