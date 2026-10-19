@@ -20,5 +20,7 @@ function getHumanChoice() {
     return getChoice(input);
 }
 
+let humanScore = 0;
+let computerScore = 0;
 console.log("getComputerChoice", getComputerChoice());
 console.log("getHumanChoice", getHumanChoice());
